@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-exports.getDataFromApi = function() {
+module.exports = function() {
   return axios
     .get(process.env.URL)
     .then(res => res.data)
