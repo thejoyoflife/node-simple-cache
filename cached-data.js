@@ -12,11 +12,9 @@ class Cache {
   get() {
     const value = this.cache.get(DATA_KEY);
     if (value) {
-      console.log("Returning Cached Value...");
       return Promise.resolve(value);
     }
 
-    console.log("Calling API and setting cache...");
     return getDataFromApi().then(data => {
       this.cache.set(DATA_KEY, data);
       return data;
